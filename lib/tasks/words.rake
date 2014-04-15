@@ -12,5 +12,4 @@ namespace :words do
       Word.import(words)
     end
   end
-
 end
