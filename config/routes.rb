@@ -1,5 +1,7 @@
 XamarinChallenge::Application.routes.draw do
-  get "word/search"
+  get "search" => "word#search"
+
+  root "word#search"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
