@@ -1,9 +1,10 @@
 class WordController < ApplicationController
   def search
-  end
-
-  def results
-    word = params[:word].chars.sort.join
-    Word.find(:anagram => word).all
+    if params[:word]
+      word = params[:word].chars.sort.join
+      @words = Word.where(:anagram => word)
+    else
+      @words = []
+    end
   end
 end
