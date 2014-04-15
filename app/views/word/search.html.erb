@@ -1,12 +1,20 @@
-<%= form_tag word_search_path, :method => 'get' do %>
-	<%= label_tag(:word, "Search for") %>
+<h1>Search</h1>
+
+<%= form_tag word_search_path, :method => 'get', :class => "navbar-form" do %>
 	<%= text_field_tag(:word) %>
-	<%= submit_tag("Search") %>
+	<%= submit_tag("Search", :class => ['btn', 'btn-default']) %>
 <% end %> 
 
 <% if !@words.blank? %>
+<ul>
   <% for word in @words %>
+  	<li>
+  		<h4>
+  			<%= word.term %>
+  		</h4>
+  	</li>
   <% end %>
+</ul>
 <% else %>
   
 <% end %>
